@@ -6,7 +6,7 @@ https://ardupilot.org/dev/docs/building-setup-linux.html
 
 Initial dependencies
 
-sudo apt-get install python-dev python-opencv 
+	sudo apt-get install python-dev python-opencv 
 	python-wxgtk3.0 python-matplotlib python-pygame
 	python-lxml python-yaml vim git 
 	
