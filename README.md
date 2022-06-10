@@ -11,21 +11,21 @@ Initial dependencies
 	$sudo apt install python-pip
 	$pip --version (make sure its working)
 		
-	sudo pip install --upgrade pip
-		pip --version (make sure its working)
+	$sudo pip install --upgrade pip
+	$pip --version (make sure its working)
 	
-	sudo pip install MAVProxy==1.6.2
+	$sudo pip install MAVProxy==1.6.2
 		
-	sudo usermod -a -G dialout $USER
+	$sudo usermod -a -G dialout $USER
 	
-	sudo apt-get remove modemmanager
+	$sudo apt-get remove modemmanager
   
 All the vehicles share the same code in libraries. Once you compile the code, build directory will be made. 
 
 The tool to build is waf. We need to specify the vehicle type and the hardware target we compile to.
 Example check the support hardware using
 
-ardupilot$ ./waf list_boards
+	ardupilot$ ./waf list_boards
 
 
 # Flight Modes in ArduPilot
