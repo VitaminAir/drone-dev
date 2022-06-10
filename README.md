@@ -48,16 +48,38 @@ https://ardupilot.org/copter/docs/flight-modes.html
 
 What does sim_vehicle.py do?
 
-Launches our simulated drone with four main 
-Detects what vehicle to build for (Copter, Plane, Rover, etc.)launch sim_vehicle from ArduCopter means that the vehicle type is copter$sim_vehicle.py  --map --console
+	Launches our simulated drone with four main 
+		Detects what vehicle to build for (Copter, Plane, Rover, etc.). launch sim_vehicle from ArduCopter means that the vehicle type is copter.
+	
+		$sim_vehicle.py  --map 	--console
 
-Compiles the necessary source code into an executable
-Launches the simulated drone by running the SITL executable
-Launches MAVProxy to communicate with/command the SITL drone
+	Compiles the necessary source code into an executable.
+	Launches the simulated drone by running the SITL executable.
+	Launches MAVProxy to communicate with/command the SITL drone.
 
 STABILIZE> mode GUIDED
 GUIDED> arm throttle
 GUIDED> takeoff 10
+
+# Parameter in ArduPilot
+A variable that can be set to different numbers to change some of the drone’s settings/configuration or behavior
+
+Example parameters:	
+
+	-RTL_ALT (cm): The height the drone will fly to when switched into RTL mode.
+	-BATT_CAPACITY (mAh): A number that is set to the milli-amp-hours of	the battery that is being used on the drone. This may be used in the calculation of the 	remaining battery life. 	
+	-ANGLE_MAX (centi-degrees): The maximum angle the drone will be able	to pitch/roll to. 
+
+Check the parameter
+
+	ArduCopter$ ls mav.parm
+	ArduCopter$ wc –l mav.parm
+	ArduCopter$ cat mav.parm
+
+Modify parameter
+
+$cat mav.parm | grep RTL_ALT
+
 
 # Parameter with SITL Drone and MAVProxy
 
@@ -68,8 +90,7 @@ Param set <PARAMETER NAME> <VALUE>
 
 # Ground Control Station
 
-It is an interface to the done that gives the pilots a way to communicate with the
-Drone
-This interface can be used to command the drone or simply receive the infoupdates (GPS health, battery, speed, etc)
-GCS can refer to the hardware setup of the ground control station, or the high levelsoftware that presents all the incoming data with a GUI 
+	It is an interface to the done that gives the pilots a way to communicate with the drone.
+	This interface can be used to command the drone or simply receive the info updates (GPS health, battery, speed, etc).
+	GCS can refer to the hardware setup of the ground control station, or the high levelsoftware that presents all the incoming data with a GUI. 
 
