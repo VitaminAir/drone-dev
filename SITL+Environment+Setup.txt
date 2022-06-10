@@ -1,0 +1,42 @@
+Environment Setup:
+
+- Install VirtualBox and spinn Ubuntu 16.04 in it
+
+- On first start run:
+  sudo apt update && sudo apt upgrade
+  sudo apt install virtualbox-guest-dkms
+  And only after that click Insert Guest Addons CD
+
+- Install Git
+  sudo apt-get install git
+  sudo apt-get install gitk git-gui
+
+- Get the project
+  git clone --recursive https://github.com/ArduPilot/ardupilot.git
+  cd ardupilot
+
+- Install required packages
+  Tools/environment_install/install-prereqs-ubuntu.sh -y
+  . ~/.profile
+
+- Cofigure the board and build vehicle type
+  ./waf configure --board fmuv3
+  ./waf copter
+
+- Go to ArduCopter directory and run simulator
+  cd ArduCopter
+  sim_vehicle.py --console --map --out 192.168.0.101:14553
+
+More detailed information from:
+    https://ardupilot.org/dev/docs/building-setup-linux.html#building-setup-linux  
+
+
+
+
+
+
+ 
+
+
+
+
