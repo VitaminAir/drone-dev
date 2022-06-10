@@ -4,15 +4,33 @@ https://ardupilot.org/dev/docs/building-setup-linux.html
 
 # Build in ArduPilot
 
+Initial dependencies
+
+sudo apt-get install python-dev python-opencv 
+	python-wxgtk3.0 python-matplotlib python-pygame
+	python-lxml python-yaml vim git 
+	
+	sudo apt install python-pip
+		pip --version (make sure its working)
+		
+	sudo pip install --upgrade pip
+		pip --version (make sure its working)
+	
+	sudo pip install MAVProxy==1.6.2
+		
+	sudo usermod -a -G dialout $USER
+	
+	sudo apt-get remove modemmanager
+  
 All the vehicles share the same code in libraries. Once you compile the code, build directory will be made. 
 
 The tool to build is waf. We need to specify the vehicle type and the hardware target we compile to.
-Ex check the support hardware using
+Example check the support hardware using
 
 ardupilot$ ./waf list_boards
 
 
-# Flight Mod es in ArduPilot
+# Flight Modes in ArduPilot
 
 A flight mode is a particular way in which the drone can be controlled. 
 
